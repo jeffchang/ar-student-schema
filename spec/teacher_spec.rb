@@ -1,6 +1,19 @@
 require 'rspec'
 require 'date'
 require_relative '../app/models/teacher'
+require_relative '../app/models/student'
+
+describe Teacher do
+
+  before(:each) do
+    @teacher = Teacher.all.sample
+  end
+
+  it "should have lots of students" do
+    @teacher.students.first.class.should == Student
+  end
+
+end
 
 describe Teacher, "validations" do
 

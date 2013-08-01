@@ -1,7 +1,24 @@
 require 'rspec'
 require 'date'
 require_relative '../app/models/student'
+require_relative '../app/models/teacher'
 
+
+describe Student, 'teacher associations' do
+
+  describe '#teacher' do
+
+    before(:each) do
+      p @student = Student.all.sample
+    end
+
+    it 'should return a teacher' do
+      @student.teacher.class.should == Teacher
+    end
+
+  end
+
+end
 
 describe Student, "#name and #age" do
 
@@ -86,6 +103,7 @@ describe Student, "validations" do
   end
 
 end
+
 
 describe Student, "advanced validations" do
 

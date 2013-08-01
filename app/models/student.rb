@@ -14,10 +14,6 @@ class Student < ActiveRecord::Base
     self.phone.gsub(/\D/, "")
   end
 
-  def name
-    "#{self.first_name} #{self.last_name}"
-  end
-
   def age
     ((Date.today - self.birthday) / 365).to_i
   end

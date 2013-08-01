@@ -13,7 +13,7 @@ module StudentsImporter
         else
           attribute_hash = Hash[field_names.zip(data)]
           student = Student.create!(attribute_hash)
-          student.teacher = teachers.sample
+          student.teachers << teachers.sample(rand(1..4))
           student.save
         end
       end

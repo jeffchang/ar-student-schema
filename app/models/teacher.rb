@@ -3,7 +3,7 @@ require 'date'
 
 class Teacher < ActiveRecord::Base
 
-  has_many :students
+  has_and_belongs_to_many :students
 
   validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]{2,}\z/i, :message => "Invalid email address"
   validates_uniqueness_of :email

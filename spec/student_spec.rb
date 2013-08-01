@@ -9,11 +9,11 @@ describe Student, 'teacher associations' do
   describe '#teacher' do
 
     before(:each) do
-      p @student = Student.all.sample
+      @student = Student.all.sample
     end
 
-    it 'should return a teacher' do
-      @student.teacher.class.should == Teacher
+    it 'should have a lot of teachers' do
+      @student.teachers.first.class.should == Teacher
     end
 
   end

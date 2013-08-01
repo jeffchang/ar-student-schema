@@ -3,7 +3,7 @@ require 'date'
 
 class Student < ActiveRecord::Base
 
-  belongs_to :teacher
+  has_and_belongs_to_many :teachers
 
   validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]{2,}\z/i, :message => "Invalid email address"
   validates_numericality_of :age, :greater_than_or_equal_to => 5
